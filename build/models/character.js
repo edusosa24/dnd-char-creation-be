@@ -1,6 +1,14 @@
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+"use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Character = void 0;
+var _mongoose = _interopRequireDefault(require("mongoose"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+const {
+  Schema
+} = _mongoose.default;
 const characterSchema = new Schema({
   general: {
     name: String,
@@ -148,14 +156,11 @@ const characterSchema = new Schema({
     },
     attacksAndSpellcasting: {
       weapons: {
-        type: [
-          {
-            name: String,
-            attackBonus: String,
-            damageAndType: String
-          }
-        ],
-        _id: false
+        type: [{
+          name: String,
+          attackBonus: String,
+          damageAndType: String
+        }]
       },
       extra: String
     }
@@ -197,119 +202,74 @@ const characterSchema = new Schema({
       level1: {
         total: Number,
         expended: Number,
-        known: {
-          type: [
-            {
-              name: String,
-              prepared: Boolean
-            }
-          ],
-          _id: false
-        }
+        known: [{
+          name: String,
+          prepared: Boolean
+        }]
       },
       level2: {
         total: Number,
         expended: Number,
-        known: {
-          type: [
-            {
-              name: String,
-              prepared: Boolean
-            }
-          ],
-          _id: false
-        }
+        known: [{
+          name: String,
+          prepared: Boolean
+        }]
       },
       level3: {
         total: Number,
         expended: Number,
-        known: {
-          type: [
-            {
-              name: String,
-              prepared: Boolean
-            }
-          ],
-          _id: false
-        }
+        known: [{
+          name: String,
+          prepared: Boolean
+        }]
       },
       level4: {
         total: Number,
         expended: Number,
-        known: {
-          type: [
-            {
-              name: String,
-              prepared: Boolean
-            }
-          ],
-          _id: false
-        }
+        known: [{
+          name: String,
+          prepared: Boolean
+        }]
       },
       level5: {
         total: Number,
         expended: Number,
-        known: {
-          type: [
-            {
-              name: String,
-              prepared: Boolean
-            }
-          ],
-          _id: false
-        }
+        known: [{
+          name: String,
+          prepared: Boolean
+        }]
       },
       level6: {
         total: Number,
         expended: Number,
-        known: {
-          type: [
-            {
-              name: String,
-              prepared: Boolean
-            }
-          ],
-          _id: false
-        }
+        known: [{
+          name: String,
+          prepared: Boolean
+        }]
       },
       level7: {
         total: Number,
         expended: Number,
-        known: {
-          type: [
-            {
-              name: String,
-              prepared: Boolean
-            }
-          ],
-          _id: false
-        }
+        known: [{
+          name: String,
+          prepared: Boolean
+        }]
       },
       level8: {
         total: Number,
         expended: Number,
-        known: {
-          type: [
-            {
-              name: String,
-              prepared: Boolean
-            }
-          ],
-          _id: false
-        }
+        known: [{
+          name: String,
+          prepared: Boolean
+        }]
       },
       level9: {
         total: Number,
         expended: Number,
-        known: {
-          type: [
-            {
-              name: String,
-              prepared: Boolean
-            }
-          ],
-          _id: false
-        }
+        known: [{
+          name: String,
+          prepared: Boolean
+        }]
       }
     }
   },
@@ -318,7 +278,6 @@ const characterSchema = new Schema({
     ref: 'User'
   }
 });
-
 characterSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
@@ -326,5 +285,4 @@ characterSchema.set('toJSON', {
     delete returnedObject.__v;
   }
 });
-
-export const Character = mongoose.model('Character', characterSchema);
+const Character = exports.Character = _mongoose.default.model('Character', characterSchema);

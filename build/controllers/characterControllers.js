@@ -1,64 +1,52 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _loggers = require("../utils/loggers");
+var _characterQueries = _interopRequireDefault(require("../dao/characterQueries"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 /* eslint-disable */
-import { Request, Response, NextFunction } from 'express';
-import { errorLog } from '../utils/loggers';
-import characterQueries from '../dao/characterQueries';
 
 // GET CONTROLLERS
 
-const getAllCharacters = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getAllCharacters = async (req, res, next) => {
   try {
-    const response = await characterQueries.getAll();
+    const response = await _characterQueries.default.getAll();
     return res.status(200).send(response).end();
-  } catch (error: any) {
-    errorLog(error);
+  } catch (error) {
+    (0, _loggers.errorLog)(error);
     // next(error);
   }
 };
-
-const getAllFromUser = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getAllFromUser = async (req, res, next) => {
   try {
-    const response = await characterQueries.getAllFromUser(req.params.userId);
+    const response = await _characterQueries.default.getAllFromUser(req.params.userId);
     return res.status(200).send(response).end();
-  } catch (error: any) {
-    errorLog(error);
+  } catch (error) {
+    (0, _loggers.errorLog)(error);
     // next(error);
   }
 };
-
-const getCharacter = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const getCharacter = async (req, res, next) => {
   try {
-    const response = await characterQueries.getOne(req.params.characterId);
+    const response = await _characterQueries.default.getOne(req.params.characterId);
     return res.status(200).send(response).end();
-  } catch (error: any) {
-    errorLog(error);
+  } catch (error) {
+    (0, _loggers.errorLog)(error);
     // next(error);
   }
 };
 
 // POST CONTROLLERS
 
-const postCharacter = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const postCharacter = async (req, res, next) => {
   try {
-    const response = await characterQueries.createOne(req.body);
+    const response = await _characterQueries.default.createOne(req.body);
     return res.status(201).send(response).end();
-  } catch (error: any) {
-    errorLog(error);
+  } catch (error) {
+    (0, _loggers.errorLog)(error);
     // next(error);
   }
 };
@@ -98,11 +86,11 @@ const deleteCharacter = async (
   }
 };
 */
-export default {
+var _default = exports.default = {
   getAllCharacters,
   getCharacter,
   getAllFromUser,
-  postCharacter,
+  postCharacter
   //putCharacter,
   //deleteCharacter,
 };
