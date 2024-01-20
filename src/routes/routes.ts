@@ -9,30 +9,37 @@ import {
   validateAdmin,
 } from '../utils/middleware';
 */
+import { characterValidator } from '../utils/middlewares/validators/characterValidator';
+
 export const characterRoutes = Router();
 export const userRoutes = Router();
 export const loginRoutes = Router();
 
 characterRoutes.get('/', characterControllers.getAllCharacters);
-characterRoutes.get('/:id', characterControllers.getCharacter);
+characterRoutes.get('/:userId', characterControllers.getCharacter);
 /* characterRoutes.get(
   '/:userId/characters/:id',
   characterControllers.getCharacter
 );*/
 
-characterRoutes.get('/:userId/characters', characterControllers.getAllFromUser);
+characterRoutes.get('/:userId/characters', characterControllers.getFromUser);
 //characterRoutes.post('/:userId/characters', characterControllers.postCharacter);
-characterRoutes.post('/', characterControllers.postCharacter);
-/*
+characterRoutes.post(
+  '/',
+  characterValidator,
+  characterControllers.postCharacter
+);
+
 characterRoutes.put(
-  '/:userId/characters/:id',
+  '/:userId/character/:id',
   characterControllers.putCharacter
 );
 characterRoutes.delete(
-  '/:userId/characters/:id',
+  '/:userId/character/:id',
   characterControllers.deleteCharacter
 );
 
+/*
 userRoutes.post('/', () => {});
 userRoutes.delete('/:id', () => {});
 

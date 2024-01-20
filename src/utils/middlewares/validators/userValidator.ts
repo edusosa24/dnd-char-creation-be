@@ -7,9 +7,3 @@ const validateAdmin = (req: Request, res: Response, next: NextFunction) => {
 const validateUser = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
-
-const validateCharacter = (req: Request, res: Response, next: NextFunction) => {
-  next();
-};
-
-export { validateUser, validateCharacter, validateAdmin };

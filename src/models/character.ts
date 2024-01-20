@@ -17,12 +17,30 @@ const characterSchema = new Schema({
     proficiencyBonus: Number,
     passiveWisdom: Number,
     stats: {
-      strength: Number,
-      dexterity: Number,
-      constitution: Number,
-      intelligence: Number,
-      wisdom: Number,
-      charisma: Number
+      strength: {
+        value: Number,
+        bonus: Number
+      },
+      dexterity: {
+        value: Number,
+        bonus: Number
+      },
+      constitution: {
+        value: Number,
+        bonus: Number
+      },
+      intelligence: {
+        value: Number,
+        bonus: Number
+      },
+      wisdom: {
+        value: Number,
+        bonus: Number
+      },
+      charisma: {
+        value: Number,
+        bonus: Number
+      }
     },
     savingThrows: {
       strength: {
@@ -171,7 +189,7 @@ const characterSchema = new Schema({
     equipment: String
   },
   appearance: {
-    age: Number,
+    age: String,
     height: String,
     weight: String,
     eyes: String,
