@@ -1,48 +1,43 @@
 import { Router } from 'express';
 import characterControllers from '../controllers/characterControllers';
-// import userControllers from '../controllers/userControllers';
-// import loginControllers from '../controllers/loginControllers';
-/*
+import userControllers from '../controllers/userControllers';
+import loginControllers from '../controllers/loginControllers';
+import { validateCharacter } from '../utils/middlewares/validators/characterValidator';
+import { validateCredentials } from '../utils/middlewares/validators/credentialsValidator';
 import {
-  validateUser,
-  validateCharacter,
   validateAdmin,
-} from '../utils/middleware';
-*/
-import { characterValidator } from '../utils/middlewares/validators/characterValidator';
+  validateUserCreate,
+  validateUserLogin
+} from '../utils/middlewares/validators/userValidator';
 
 export const characterRoutes = Router();
 export const userRoutes = Router();
 export const loginRoutes = Router();
 
-characterRoutes.get('/', characterControllers.getAllCharacters);
-characterRoutes.get('/:userId', characterControllers.getCharacter);
-/* characterRoutes.get(
-  '/:userId/characters/:id',
-  characterControllers.getCharacter
-);*/
-
-characterRoutes.get('/:userId/characters', characterControllers.getFromUser);
-//characterRoutes.post('/:userId/characters', characterControllers.postCharacter);
+characterRoutes.get('/', validateAdmin, characterControllers.getAllCharacters);
+characterRoutes.get('/:id', characterControllers.getCharacter);
+characterRoutes.get('/user/:userId', characterControllers.getFromUser);
 characterRoutes.post(
-  '/',
-  characterValidator,
+  '/user/:userId',
+  validateCredentials,
   characterControllers.postCharacter
 );
-
 characterRoutes.put(
-  '/:userId/character/:id',
+  '/user/:userId/character/:id',
+  validateCredentials,
+  validateCharacter,
   characterControllers.putCharacter
 );
 characterRoutes.delete(
-  '/:userId/character/:id',
+  '/user/:userId/character/:id',
+  validateCredentials,
   characterControllers.deleteCharacter
 );
 
-/*
-userRoutes.post('/', () => {});
-userRoutes.delete('/:id', () => {});
+userRoutes.get('/', validateAdmin, userControllers.getAllUsers);
+userRoutes.get('/:id', validateCredentials, userControllers.getUser);
+userRoutes.post('/', validateUserCreate, userControllers.postUser);
 
-loginRoutes.post('/', () => {});
-*/
+loginRoutes.post('/', validateUserLogin, loginControllers.login);
+
 export default { characterRoutes, userRoutes, loginRoutes };

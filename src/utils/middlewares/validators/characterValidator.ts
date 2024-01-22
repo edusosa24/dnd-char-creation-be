@@ -1,7 +1,7 @@
 import { checkSchema } from 'express-validator';
 import { NextFunction, Request, Response } from 'express';
 
-export const characterValidator = async (
+export const validateCharacter = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -1945,6 +1945,17 @@ export const characterValidator = async (
           errorMessage:
             'spells.slots.[LEVEL].[KNOWN].[SPELL].prepared must be true or false'
         }
+      },
+
+      campaign: {
+        exists: {
+          errorMessage: 'Campaign id is required',
+          bail: true
+        },
+        isString: {
+          errorMessage: 'Campaign id should be a string',
+          bail: true
+        }
       }
     },
     ['body']
@@ -1956,7 +1967,6 @@ export const characterValidator = async (
 
   if (errors.length !== 0) {
     next(errors);
-  } else {
-    next();
   }
+  next();
 };

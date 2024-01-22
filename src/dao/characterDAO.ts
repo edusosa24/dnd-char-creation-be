@@ -1,4 +1,5 @@
 import { Character } from '../models/character';
+import { Character as iCharacter } from '../utils/interfaces/iCharacter';
 
 const getAll = async () => {
   const data = await Character.find().catch((err) => {
@@ -24,7 +25,7 @@ const getOne = async (characterId: string) => {
   return data;
 };
 
-const createOne = async (character: any) => {
+const createOne = async (character: iCharacter) => {
   const newCharacter = new Character(character);
   const data = await newCharacter.save().catch((err) => {
     throw err;
@@ -33,7 +34,7 @@ const createOne = async (character: any) => {
   return data;
 };
 
-const updateOne = async (character: any, characterId: string) => {
+const updateOne = async (character: iCharacter, characterId: string) => {
   const newCharacter = new Character(character);
   const data = await Character.findOneAndUpdate(
     { id: characterId },

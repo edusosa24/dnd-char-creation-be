@@ -1,8 +1,6 @@
-/* eslint-disable */
 import { Request, Response, NextFunction } from 'express';
 import { errorLog } from '../utils/loggers';
-import characterQueries from '../dao/characterQueries';
-import { validationResult } from 'express-validator';
+import characterDAO from '../dao/characterDAO';
 
 // GET CONTROLLERS
 
@@ -12,7 +10,7 @@ const getAllCharacters = async (
   next: NextFunction
 ) => {
   try {
-    const response = await characterQueries.getAll();
+    const response = await characterDAO.getAll();
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -22,7 +20,7 @@ const getAllCharacters = async (
 
 const getFromUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const response = await characterQueries.getFromUser(req.params.userId);
+    const response = await characterDAO.getFromUser(req.params.userId);
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -36,7 +34,7 @@ const getCharacter = async (
   next: NextFunction
 ) => {
   try {
-    const response = await characterQueries.getOne(req.params.characterId);
+    const response = await characterDAO.getOne(req.params.characterId);
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -52,14 +50,9 @@ const postCharacter = async (
   next: NextFunction
 ) => {
   try {
-    const result = validationResult(req);
-    if (!result.isEmpty) {
-      return res.status(400).send(result.mapped());
-    }
-
-    const response = await characterQueries.createOne(req.body);
+    const response = await characterDAO.createOne(req.body);
     return res.status(201).send(response).end();
-  } catch (err: any) {
+  } catch (err) {
     errorLog(err);
     next(err);
   }
@@ -73,12 +66,12 @@ const putCharacter = async (
   next: NextFunction
 ) => {
   try {
-    const response = await characterQueries.updateOne(
-      req.params.characterId,
-      req.body
+    const response = await characterDAO.updateOne(
+      req.body,
+      req.params.characterId
     );
     return res.status(200).send(response).end();
-  } catch (err: any) {
+  } catch (err) {
     errorLog(err);
     next(err);
   }
@@ -92,9 +85,9 @@ const deleteCharacter = async (
   next: NextFunction
 ) => {
   try {
-    await characterQueries.getFromUser(req.params.characterId);
+    await characterDAO.getFromUser(req.params.characterId);
     return res.status(204).end();
-  } catch (err: any) {
+  } catch (err) {
     errorLog(err);
     next(err);
   }
