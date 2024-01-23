@@ -20,6 +20,7 @@ characterRoutes.get('/user/:userId', characterControllers.getFromUser);
 characterRoutes.post(
   '/user/:userId',
   validateCredentials,
+  validateCharacter,
   characterControllers.postCharacter
 );
 characterRoutes.put(

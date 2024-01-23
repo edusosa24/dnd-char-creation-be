@@ -1,5 +1,6 @@
-import { checkSchema } from 'express-validator';
+import { checkSchema, validationResult } from 'express-validator';
 import { NextFunction, Request, Response } from 'express';
+import { Error as iError } from '../../interfaces/iError';
 
 export const validateCharacter = async (
   req: Request,
@@ -1961,12 +1962,15 @@ export const validateCharacter = async (
     ['body']
   ).run(req);
 
-  const errors = result
-    .filter((validation) => validation.context.errors.length !== 0)
-    .map((validation) => validation.context.message);
+  const errors = validationResult(req);
 
-  if (errors.length !== 0) {
-    next(errors);
+  if (!errors.isEmpty()) {
+    const msg: string[] = errors.array().map((er) => `${er.msg}`);
+    const error: iError = {
+      error: msg,
+      status: 400
+    };
+    next(msg);
   }
   next();
 };

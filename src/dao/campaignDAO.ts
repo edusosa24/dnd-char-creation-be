@@ -33,7 +33,7 @@ const createOne = async (campaign: iCampaign) => {
 
   return data;
 };
-
+/*
 const updateOne = async (campaign: iCampaign, campaignId: string) => {
   const newCampaign = new Campaign(campaign);
   const data = await Campaign.findOneAndUpdate(
@@ -55,5 +55,12 @@ const deleteOne = async (campaignId: string) => {
 
   return data;
 };
-
-export default { getAll, getFromUser, getOne, createOne, updateOne, deleteOne };
+*/
+export default {
+  getAll,
+  getFromUser,
+  getOne,
+  createOne
+  // updateOne,
+  // deleteOne
+};
