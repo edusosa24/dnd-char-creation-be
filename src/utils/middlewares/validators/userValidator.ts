@@ -1,4 +1,4 @@
-import { checkSchema, validationResult } from 'express-validator';
+import { checkSchema, checkExact, validationResult } from 'express-validator';
 import { NextFunction, Request, Response } from 'express';
 import environment from '../../../configuration/environment';
 import { Error as iError } from '../../interfaces/iError';
@@ -8,7 +8,7 @@ export const validateAdmin = async (
   res: Response,
   next: NextFunction
 ) => {
-  const result = await checkSchema(
+  await checkSchema(
     {
       username: {
         equals: {
@@ -32,14 +32,16 @@ export const validateAdmin = async (
     ['body']
   ).run(req);
 
-  const errors = result
-    .filter((validation) => validation.context.errors.length !== 0)
-    .map((validation) => validation.context.message);
+  const errors = validationResult(req);
 
-  if (errors.length !== 0) {
-    next(errors);
+  if (!errors.isEmpty()) {
+    const msg: string[] = errors.array().map((er) => `${er.msg}`);
+    const error: iError = {
+      error: msg,
+      status: 401
+    };
+    next(error);
   }
-
   next();
 };
 
@@ -48,45 +50,66 @@ export const validateUserLogin = async (
   res: Response,
   next: NextFunction
 ) => {
-  const result = await checkSchema(
-    {
-      username: {
-        exists: {
-          errorMessage: 'username is required',
-          bail: true
+  await checkExact(
+    checkSchema(
+      {
+        username: {
+          exists: {
+            errorMessage: 'missing credentials',
+            bail: {
+              level: 'request'
+            }
+          },
+          isString: {
+            errorMessage: 'invalida username or password',
+            bail: {
+              level: 'request'
+            }
+          },
+          isLength: {
+            options: { min: 6, max: 12 },
+            errorMessage: 'invalida username or password',
+            bail: {
+              level: 'request'
+            }
+          }
         },
-        isString: {
-          errorMessage: 'username must be a string',
-          bail: true
-        },
-        isLength: {
-          options: { min: 6, max: 12 },
-          errorMessage: 'username should be between 6 and 12 characters long',
-          bail: true
+        password: {
+          exists: {
+            errorMessage: 'missing credentials',
+            bail: {
+              level: 'request'
+            }
+          },
+          isString: {
+            errorMessage: 'invalida username or password',
+            bail: {
+              level: 'request'
+            }
+          },
+          isLength: {
+            errorMessage: 'invalida username or password',
+            options: { min: 8, max: 20 },
+            bail: {
+              level: 'request'
+            }
+          }
         }
       },
-      password: {
-        exists: {
-          errorMessage: 'password is required',
-          bail: true
-        },
-        isString: {
-          errorMessage: 'password must be a string',
-          bail: true
-        }
-      }
-    },
-    ['body']
+      ['headers']
+    )
   ).run(req);
 
-  const errors = result
-    .filter((validation) => validation.context.errors.length !== 0)
-    .map((validation) => validation.context.message);
+  const errors = validationResult(req);
 
-  if (errors.length !== 0) {
-    next(errors);
+  if (!errors.isEmpty()) {
+    const msg: string[] = errors.array().map((er) => `${er.msg}`);
+    const error: iError = {
+      error: msg,
+      status: 401
+    };
+    next(error);
   }
-
   next();
 };
 
@@ -95,40 +118,42 @@ export const validateUserCreate = async (
   res: Response,
   next: NextFunction
 ) => {
-  const result = await checkSchema(
-    {
-      username: {
-        exists: {
-          errorMessage: 'username is required',
-          bail: true
+  await checkExact(
+    checkSchema(
+      {
+        username: {
+          exists: {
+            errorMessage: 'username is required',
+            bail: true
+          },
+          isString: {
+            errorMessage: 'username must be a string',
+            bail: true
+          },
+          isLength: {
+            options: { min: 6, max: 12 },
+            errorMessage: 'username should be between 6 and 12 characters long',
+            bail: true
+          }
         },
-        isString: {
-          errorMessage: 'username must be a string',
-          bail: true
-        },
-        isLength: {
-          options: { min: 6, max: 12 },
-          errorMessage: 'username should be between 6 and 12 characters long',
-          bail: true
+        password: {
+          exists: {
+            errorMessage: 'password is required',
+            bail: true
+          },
+          isString: {
+            errorMessage: 'password must be a string',
+            bail: true
+          },
+          isLength: {
+            options: { min: 8, max: 20 },
+            errorMessage: 'password should be between 8 and 20 characters long',
+            bail: true
+          }
         }
       },
-      password: {
-        exists: {
-          errorMessage: 'password is required',
-          bail: true
-        },
-        isString: {
-          errorMessage: 'password must be a string',
-          bail: true
-        },
-        isLength: {
-          options: { min: 8, max: 20 },
-          errorMessage: 'password should be between 8 and 20 characters long',
-          bail: true
-        }
-      }
-    },
-    ['body']
+      ['body']
+    )
   ).run(req);
 
   const errors = validationResult(req);
@@ -139,7 +164,7 @@ export const validateUserCreate = async (
       error: msg,
       status: 400
     };
-    next(msg);
+    next(error);
   }
   next();
 };

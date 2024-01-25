@@ -5,12 +5,20 @@ const userSchema = new Schema({
   username: {
     type: String,
     unique: true,
-    require: [true, 'Username is required'],
+    require: [true, 'Username is required']
   },
   password: {
     type: String,
-    require: [true, 'Password is required'],
+    require: [true, 'Password is required']
   },
+  campaigns: {
+    type: [Schema.Types.ObjectId],
+    ref: 'Campaign'
+  },
+  characters: {
+    type: [Schema.Types.ObjectId],
+    ref: 'Character'
+  }
 });
 
 userSchema.set('toJSON', {
@@ -19,7 +27,7 @@ userSchema.set('toJSON', {
     delete returnedObject.password;
     delete returnedObject._id;
     delete returnedObject.__v;
-  },
+  }
 });
 
 export const User = mongoose.model('User', userSchema);

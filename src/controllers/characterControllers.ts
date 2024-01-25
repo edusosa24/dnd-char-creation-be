@@ -1,6 +1,14 @@
+import {
+  getAllCharacters as getAll,
+  getCharactersFromUser as getAllFromUser,
+  getCharacter as getOne,
+  createCharacter as createOne,
+  updateCharacter as updateOne,
+  deleteCharacter as deleteOne
+} from './../dao/dao';
 import { Request, Response, NextFunction } from 'express';
 import { errorLog } from '../utils/loggers';
-import characterDAO from '../dao/characterDAO';
+import { Character as iCharacter } from '../utils/interfaces/iCharacter';
 
 // GET CONTROLLERS
 
@@ -10,7 +18,7 @@ const getAllCharacters = async (
   next: NextFunction
 ) => {
   try {
-    const response = await characterDAO.getAll();
+    const response = await getAll();
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -20,7 +28,7 @@ const getAllCharacters = async (
 
 const getFromUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const response = await characterDAO.getFromUser(req.params.userId);
+    const response = await getAllFromUser(req.params.userId);
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -34,7 +42,7 @@ const getCharacter = async (
   next: NextFunction
 ) => {
   try {
-    const response = await characterDAO.getOne(req.params.characterId);
+    const response = await getOne(req.params.characterId);
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -50,7 +58,11 @@ const postCharacter = async (
   next: NextFunction
 ) => {
   try {
-    const response = await characterDAO.createOne(req.body);
+    const character: iCharacter = {
+      ...req.body,
+      user: req.params.userId
+    };
+    const response = await createOne(character);
     return res.status(201).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -66,10 +78,7 @@ const putCharacter = async (
   next: NextFunction
 ) => {
   try {
-    const response = await characterDAO.updateOne(
-      req.body,
-      req.params.characterId
-    );
+    const response = await updateOne(req.body, req.params.characterId);
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -85,7 +94,7 @@ const deleteCharacter = async (
   next: NextFunction
 ) => {
   try {
-    await characterDAO.getFromUser(req.params.characterId);
+    await deleteOne(req.params.characterId);
     return res.status(204).end();
   } catch (err) {
     errorLog(err);

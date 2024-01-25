@@ -331,10 +331,6 @@ const characterSchema = new Schema({
       }
     }
   },
-  campaign: {
-    type: Schema.Types.ObjectId,
-    ref: 'Campaign'
-  },
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'

@@ -14,5 +14,6 @@ export const dbConnect = async () => {
     loggers.infoLog('Connected to DB');
   } catch (error: any) {
     loggers.errorLog('Error connecting to DB.', error.message());
+    throw error;
   }
 };

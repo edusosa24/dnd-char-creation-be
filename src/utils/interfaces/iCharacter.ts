@@ -1,4 +1,3 @@
-import { Campaign } from '../../models/campaign';
 export interface Character {
   general: {
     class: string;
@@ -121,8 +120,7 @@ export interface Character {
       level9: LevelSlots;
     };
   };
-  campaign: string;
-  user: string;
+  user?: string;
 }
 
 interface Weapon {

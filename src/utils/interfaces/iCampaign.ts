@@ -1,5 +1,5 @@
 export interface Campaign {
   name: string;
-  character: string[];
-  master: string;
+  characters: string[];
+  master?: string;
 }

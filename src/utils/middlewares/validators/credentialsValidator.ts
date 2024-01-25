@@ -1,3 +1,4 @@
+import { getUsersByUsername } from './../../../dao/dao';
 import {
   CustomValidator,
   checkSchema,
@@ -6,7 +7,6 @@ import {
 import { NextFunction, Request, Response } from 'express';
 import environment from '../../../configuration/environment';
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import dao from '../../../dao/userDAO';
 import { Error as iError } from '../../interfaces/iError';
 
 const tokenIsValid: CustomValidator = async (authorization: string) => {
@@ -21,7 +21,7 @@ const tokenIsValid: CustomValidator = async (authorization: string) => {
     throw new Error('invalid authorization');
   }
 
-  const user = await dao.getByUsername(decodedToken.username);
+  const user = await getUsersByUsername(decodedToken.username);
 
   if (!user) {
     throw new Error('invalid authorization');
@@ -48,9 +48,9 @@ export const validateCredentials = async (
   res: Response,
   next: NextFunction
 ) => {
-  const result = await checkSchema(
+  await checkSchema(
     {
-      authorization: {
+      Authorization: {
         exists: {
           errorMessage: 'authorization is required',
           bail: true

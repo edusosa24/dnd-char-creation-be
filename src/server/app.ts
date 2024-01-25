@@ -3,7 +3,12 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnect } from '../configuration/mongoConfig';
-import { characterRoutes, userRoutes, loginRoutes } from '../routes/routes';
+import {
+  characterRoutes,
+  campaignRoutes,
+  userRoutes,
+  loginRoutes
+} from '../routes/routes';
 import { errorHandler } from '../utils/errorHandler';
 
 const app = express();
@@ -15,6 +20,7 @@ app.use(morgan('tiny'));
 dbConnect().catch((err) => {});
 
 app.use('/api/characters', characterRoutes);
+app.use('/api/campaigns', campaignRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/login', loginRoutes);
 

@@ -1,4 +1,4 @@
-import userDAO from '../dao/userDAO';
+import { getUsersByUsername } from './../dao/dao';
 import jwt from 'jsonwebtoken';
 import bcrypt from '../utils/bcrypt';
 import { errorLog } from '../utils/loggers';
@@ -7,8 +7,10 @@ import { Request, Response, NextFunction } from 'express';
 
 const login = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { username, password } = req.body;
-    const user = await userDAO.getByUsername(username);
+    const username: string = req.headers.username as string;
+    const password: string = req.headers.password as string;
+
+    const user = await getUsersByUsername(username);
 
     const passwordCorrect =
       user === null
