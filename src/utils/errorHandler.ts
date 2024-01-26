@@ -11,7 +11,7 @@ const errorHandler = (
     return res.status(err.status).json({ error: err.error });
   }
 
-  return res.status(404).json({ error: err.message });
+  return res.status(418).json({ error: err.message });
 };
 
 export { errorHandler };

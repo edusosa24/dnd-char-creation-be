@@ -1,35 +1,48 @@
 import { checkSchema, checkExact, validationResult } from 'express-validator';
 import { NextFunction, Request, Response } from 'express';
-import environment from '../../../configuration/environment';
+import { User } from '../../../models/user';
 import { Error as iError } from '../../interfaces/iError';
 
-export const validateAdmin = async (
+const checkUnique = async (username: string) => {
+  const user = await User.findOne({ username });
+
+  if (!!user) {
+    throw new Error('username already exists');
+  }
+
+  return true;
+};
+
+const checkExistance = async (userId: string) => {
+  const user = await User.findById(userId);
+  if (!user) {
+    throw new Error('user not found');
+  }
+
+  return true;
+};
+
+export const validateUserExistance = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   await checkSchema(
     {
-      username: {
-        equals: {
-          options: environment.ADMIN_USER,
-          errorMessage: 'UNAUTHORIZED',
+      userId: {
+        notEmpty: {
+          errorMessage: 'missing user id',
           bail: {
             level: 'request'
           }
-        }
-      },
-      password: {
-        equals: {
-          options: environment.ADMIN_PASSWORD,
-          errorMessage: 'UNAUTHORIZED',
-          bail: {
-            level: 'request'
-          }
+        },
+        custom: {
+          options: checkExistance,
+          bail: true
         }
       }
     },
-    ['body']
+    ['params']
   ).run(req);
 
   const errors = validationResult(req);
@@ -38,7 +51,7 @@ export const validateAdmin = async (
     const msg: string[] = errors.array().map((er) => `${er.msg}`);
     const error: iError = {
       error: msg,
-      status: 401
+      status: 404
     };
     next(error);
   }
@@ -134,6 +147,10 @@ export const validateUserCreate = async (
             options: { min: 6, max: 12 },
             errorMessage: 'username should be between 6 and 12 characters long',
             bail: true
+          },
+          custom: {
+            options: checkUnique,
+            bail: true
           }
         },
         password: {
@@ -172,5 +189,5 @@ export const validateUserCreate = async (
 export default {
   validateUserCreate,
   validateUserLogin,
-  validateAdmin
+  validateUserExistance
 };

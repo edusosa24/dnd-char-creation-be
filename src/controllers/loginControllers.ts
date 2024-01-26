@@ -1,9 +1,9 @@
-import { getUsersByUsername } from './../dao/dao';
+import { Request, Response, NextFunction } from 'express';
+import { getUsersByUsername } from './../dao/userDAO';
 import jwt from 'jsonwebtoken';
 import bcrypt from '../utils/bcrypt';
 import { errorLog } from '../utils/loggers';
 import environment from '../configuration/environment';
-import { Request, Response, NextFunction } from 'express';
 
 const login = async (req: Request, res: Response, next: NextFunction) => {
   try {

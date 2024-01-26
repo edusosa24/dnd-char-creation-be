@@ -1,7 +1,3 @@
-# Ignore tests:
-tests
-*.test.ts
-
 # Ignore node_modules:
 node_modules
 

@@ -1,14 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import { errorLog } from '../utils/loggers';
-import {
-  getAllCampaigns as getAll,
-  getCampaign as getOne,
-  getCampaignsFromUser as getAllFromUser,
-  createCampaign as createOne,
-  deleteCampaign as deleteOne,
-  updateCampaign as updateOne
-} from '../dao/dao';
+import campaignDao from '../dao/campaignDAO';
 import { Campaign as iCampaign } from '../utils/interfaces/iCampaign';
+import { errorLog } from '../utils/loggers';
 
 // GET CONTROLLERS
 
@@ -18,7 +11,7 @@ const getAllCampaigns = async (
   next: NextFunction
 ) => {
   try {
-    const response = await getAll();
+    const response = await campaignDao.getAllCampaigns();
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -28,7 +21,7 @@ const getAllCampaigns = async (
 
 const getFromUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const response = await getAllFromUser(req.params.userId);
+    const response = await campaignDao.getCampaignsFromUser(req.params.userId);
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -38,7 +31,7 @@ const getFromUser = async (req: Request, res: Response, next: NextFunction) => {
 
 const getCampaign = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const response = await getOne(req.params.campaignId);
+    const response = await campaignDao.getCampaign(req.params.campaignId);
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -59,7 +52,7 @@ const postCampaign = async (
       characters: [],
       master: req.params.userId
     };
-    const response = await createOne(campaign);
+    const response = await campaignDao.createCampaign(campaign);
     return res.status(201).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -74,7 +67,10 @@ const putCampaign = async (req: Request, res: Response, next: NextFunction) => {
     const campaign: iCampaign = {
       ...req.body
     };
-    const response = await updateOne(campaign, req.params.campaignId);
+    const response = await campaignDao.updateCampaign(
+      campaign,
+      req.params.campaignId
+    );
     return res.status(200).send(response).end();
   } catch (err) {
     errorLog(err);
@@ -90,7 +86,7 @@ const deleteCampaign = async (
   next: NextFunction
 ) => {
   try {
-    await deleteOne(req.params.campaignId);
+    await campaignDao.deleteCampaign(req.params.campaignId);
     return res.status(204).end();
   } catch (err) {
     errorLog(err);

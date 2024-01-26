@@ -1,0 +1,3 @@
+describe('Delete characters tests', () => {
+
+})

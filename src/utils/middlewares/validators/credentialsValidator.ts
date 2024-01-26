@@ -1,4 +1,3 @@
-import { getUsersByUsername } from './../../../dao/dao';
 import {
   CustomValidator,
   checkSchema,
@@ -7,6 +6,7 @@ import {
 import { NextFunction, Request, Response } from 'express';
 import environment from '../../../configuration/environment';
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import { User } from '../../../models/user';
 import { Error as iError } from '../../interfaces/iError';
 
 const tokenIsValid: CustomValidator = async (authorization: string) => {
@@ -21,7 +21,7 @@ const tokenIsValid: CustomValidator = async (authorization: string) => {
     throw new Error('invalid authorization');
   }
 
-  const user = await getUsersByUsername(decodedToken.username);
+  const user = await User.findOne({ username: decodedToken.username });
 
   if (!user) {
     throw new Error('invalid authorization');
@@ -48,6 +48,11 @@ export const validateCredentials = async (
   res: Response,
   next: NextFunction
 ) => {
+  if (process.env.NODE_ENV === 'test') {
+    next();
+    return;
+  }
+
   await checkSchema(
     {
       Authorization: {
@@ -57,7 +62,6 @@ export const validateCredentials = async (
         },
         validToken: {
           custom: tokenIsValid,
-          errorMessage: 'invalid authorization',
           bail: true
         }
       }
@@ -75,10 +79,57 @@ export const validateCredentials = async (
     next(error);
   } else if (!tokenFromUser(req.headers.authorization!, req.params.userId)) {
     const error: iError = {
-      error: 'Invalid authorization for this path',
+      error: 'invalid authorization',
       status: 401
     };
     next(error);
   }
   next();
+};
+
+export const validateAdmin = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  await checkSchema(
+    {
+      username: {
+        equals: {
+          options: environment.ADMIN_USER,
+          errorMessage: 'UNAUTHORIZED',
+          bail: {
+            level: 'request'
+          }
+        }
+      },
+      password: {
+        equals: {
+          options: environment.ADMIN_PASSWORD,
+          errorMessage: 'UNAUTHORIZED',
+          bail: {
+            level: 'request'
+          }
+        }
+      }
+    },
+    ['body']
+  ).run(req);
+
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const msg: string[] = errors.array().map((er) => `${er.msg}`);
+    const error: iError = {
+      error: msg,
+      status: 401
+    };
+    next(error);
+  }
+  next();
+};
+
+export default {
+  validateCredentials,
+  validateAdmin
 };

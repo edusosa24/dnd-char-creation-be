@@ -1,17 +1,12 @@
-import {
-  getAllUsers as getAll,
-  getUsersById as getById,
-  createUser as createOne,
-  deleteUser as deleteOne
-} from './../dao/dao';
 import { Request, Response, NextFunction } from 'express';
-import { errorLog } from '../utils/loggers';
-import { encryptPassword } from '../utils/bcrypt';
+import userDao from './../dao/userDAO';
 import { User as iUser } from '../utils/interfaces/iUser';
+import { encryptPassword } from '../utils/bcrypt';
+import { errorLog } from '../utils/loggers';
 
 const getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const response = await getAll();
+    const response = await userDao.getAllUsers();
     return res.status(200).send(response);
   } catch (err) {
     errorLog(err);
@@ -21,7 +16,7 @@ const getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
 
 const getUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const response = await getById(req.params.userId);
+    const response = await userDao.getUsersById(req.params.userId);
     return res.status(200).send(response);
   } catch (err) {
     errorLog(err);
@@ -37,7 +32,7 @@ const postUser = async (req: Request, res: Response, next: NextFunction) => {
       characters: []
     };
     user.password = await encryptPassword(user.password);
-    const response = await createOne(user);
+    const response = await userDao.createUser(user);
     return res.status(201).send(response);
   } catch (err) {
     errorLog(err);
@@ -47,7 +42,7 @@ const postUser = async (req: Request, res: Response, next: NextFunction) => {
 
 const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const response = await deleteOne(req.params.userId);
+    const response = await userDao.deleteUser(req.params.userId);
     return res.status(204).send(response);
   } catch (err) {
     errorLog(err);

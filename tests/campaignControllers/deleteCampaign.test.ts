@@ -1,0 +1,3 @@
+describe('Delete campaign tests', () => {
+
+})

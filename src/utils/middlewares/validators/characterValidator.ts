@@ -1,6 +1,52 @@
 import { checkSchema, checkExact, validationResult } from 'express-validator';
 import { NextFunction, Request, Response } from 'express';
+import { Character } from '../../../models/character';
 import { Error as iError } from '../../interfaces/iError';
+
+const checkExistance = async (characterId: string) => {
+  const character = await Character.findById(characterId);
+  if (!character) {
+    throw new Error('character not found');
+  }
+
+  return true;
+};
+
+export const validateCharacterExistance = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  await checkSchema(
+    {
+      characterId: {
+        notEmpty: {
+          errorMessage: 'missing character id',
+          bail: {
+            level: 'request'
+          }
+        },
+        custom: {
+          options: checkExistance,
+          bail: true
+        }
+      }
+    },
+    ['params']
+  ).run(req);
+
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const msg: string[] = errors.array().map((er) => `${er.msg}`);
+    const error: iError = {
+      error: msg,
+      status: 404
+    };
+    next(error);
+  }
+  next();
+};
 
 export const validateCharacter = async (
   req: Request,
@@ -1582,9 +1628,9 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 3 },
+            options: { min: 3, max: 3 },
             errorMessage:
-              'combat.attacksAndSpellcasting.weapons max length is 3',
+              'combat.attacksAndSpellcasting.weapons should be length 3',
             bail: true
           }
         },
@@ -2064,8 +2110,8 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 8 },
-            errorMessage: 'spells.cantrips max length is 8',
+            options: { min: 8, max: 8 },
+            errorMessage: 'spells.cantrips should be length 8',
             bail: true
           }
         },
@@ -2422,8 +2468,8 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 13 },
-            errorMessage: 'spells.slots.level1.known max length is 13',
+            options: { min: 12, max: 12 },
+            errorMessage: 'spells.slots.level1.known should be length 12',
             bail: true
           }
         },
@@ -2433,8 +2479,8 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 13 },
-            errorMessage: 'spells.slots.level2.known max length is 13',
+            options: { min: 13, max: 13 },
+            errorMessage: 'spells.slots.level2.known should be length 13',
             bail: true
           }
         },
@@ -2444,8 +2490,8 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 13 },
-            errorMessage: 'spells.slots.level3.known max length is 13',
+            options: { min: 13, max: 13 },
+            errorMessage: 'spells.slots.level3.known should be length 13',
             bail: true
           }
         },
@@ -2455,8 +2501,8 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 13 },
-            errorMessage: 'spells.slots.level4.known max length is 13',
+            options: { min: 13, max: 13 },
+            errorMessage: 'spells.slots.level4.known should be length 13',
             bail: true
           }
         },
@@ -2466,8 +2512,8 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 9 },
-            errorMessage: 'spells.slots.level5.known max length is 9',
+            options: { min: 9, max: 9 },
+            errorMessage: 'spells.slots.level5.known should be length 9',
             bail: true
           }
         },
@@ -2477,8 +2523,8 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 9 },
-            errorMessage: 'sspells.slots.level6.known max length is 9',
+            options: { min: 9, max: 9 },
+            errorMessage: 'sspells.slots.level6.known should be length 9',
             bail: true
           }
         },
@@ -2488,8 +2534,8 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 9 },
-            errorMessage: 'spells.slots.level7.known max length is 9',
+            options: { min: 9, max: 9 },
+            errorMessage: 'spells.slots.level7.known should be length 9',
             bail: true
           }
         },
@@ -2499,8 +2545,8 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 7 },
-            errorMessage: 'spells.slots.level8.known max length is 7',
+            options: { min: 7, max: 7 },
+            errorMessage: 'spells.slots.level8.known should be length 7',
             bail: true
           }
         },
@@ -2510,8 +2556,8 @@ export const validateCharacter = async (
             bail: true
           },
           isArray: {
-            options: { min: 0, max: 7 },
-            errorMessage: 'spells.slots.level9.known max length is 7',
+            options: { min: 7, max: 7 },
+            errorMessage: 'spells.slots.level9.known should be length 7',
             bail: true
           }
         },
@@ -2560,4 +2606,9 @@ export const validateCharacter = async (
     next(error);
   }
   next();
+};
+
+export default {
+  validateCharacter,
+  validateCharacterExistance
 };

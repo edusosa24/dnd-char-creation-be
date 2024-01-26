@@ -1,0 +1,3 @@
+describe('Get campaign tests', () => {
+
+})
