@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { User } from '../../src/models/user';
 import supertest from 'supertest';
 import app from '../../src/server/app';
-import * as samples from './sampleUsers.json';
+import * as samples from '../sampleData/sampleUsers.json';
 
 const api = supertest(app);
 

@@ -1,0 +1,9 @@
+{
+  "correct": {
+    "name": "testCampaign"
+  },
+  "missingFields": {},
+  "sanitize": {
+    "name": "<script>alert('A')</script>"
+  }
+}

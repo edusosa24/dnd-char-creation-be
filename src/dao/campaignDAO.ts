@@ -82,7 +82,19 @@ export const updateCampaign = async (
   return data;
 };
 
-export const deleteCampaign = async (campaignId: string) => {
+export const deleteCampaign = async (userId: string, campaignId: string) => {
+  const user = await User.findById({ _id: userId }).catch((err) => {
+    throw err;
+  });
+
+  user!.campaigns = user!.campaigns.filter(
+    (campaign) => !campaign.equals(campaignId)
+  );
+
+  await User.findOneAndUpdate({ _id: userId }, { ...user }).catch((err) => {
+    throw err;
+  });
+
   await Campaign.findOneAndDelete({ _id: campaignId }).catch((err) => {
     throw err;
   });

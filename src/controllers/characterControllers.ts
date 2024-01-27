@@ -92,7 +92,8 @@ const deleteCharacter = async (
   next: NextFunction
 ) => {
   try {
-    await characterDao.deleteCharacter(req.params.characterId);
+    const { userId, characterId } = req.params;
+    await characterDao.deleteCharacter(userId, characterId);
     return res.status(204).end();
   } catch (err) {
     errorLog(err);

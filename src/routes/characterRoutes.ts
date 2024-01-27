@@ -11,11 +11,14 @@ characterRoutes.get(
   credentialsValidator.validateAdmin,
   characterControllers.getAllCharacters
 );
-characterRoutes.get('/:characterId', characterControllers.getCharacter);
+characterRoutes.get(
+  '/:characterId',
+  charValidator.validateCharacterExistance,
+  characterControllers.getCharacter
+);
 characterRoutes.get(
   '/user/:userId',
   validateUserExistance,
-  charValidator.validateCharacterExistance,
   credentialsValidator.validateCredentials,
   characterControllers.getFromUser
 );

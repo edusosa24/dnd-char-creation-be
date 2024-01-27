@@ -1,0 +1,1947 @@
+{
+  "correct": {
+    "general": {
+      "name": "TE.ST",
+      "class": "WARRIOR",
+      "level": 10,
+      "background": "DARK URGES",
+      "playerName": "TESTER",
+      "race": "ELF",
+      "alignment": "CHAOTIC EVIL",
+      "experience": 15000
+    },
+    "abilityScore": {
+      "inspiration": 5,
+      "proficiencyBonus": 5,
+      "passiveWisdom": 5,
+      "stats": {
+        "strength": {
+          "value": 15,
+          "bonus": 1
+        },
+        "dexterity": {
+          "value": 15,
+          "bonus": 1
+        },
+        "constitution": {
+          "value": 15,
+          "bonus": 1
+        },
+        "intelligence": {
+          "value": 15,
+          "bonus": 1
+        },
+        "wisdom": {
+          "value": 15,
+          "bonus": 1
+        },
+        "charisma": {
+          "value": 15,
+          "bonus": 1
+        }
+      },
+      "savingThrows": {
+        "strength": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "dexterity": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "constitution": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "intelligence": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "wisdom": {
+          "proficiency": true,
+          "bonus": 3
+        },
+        "charisma": {
+          "proficiency": true,
+          "bonus": 2
+        }
+      },
+      "skills": {
+        "acrobatics": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "animalHandling": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "arcana": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "athletics": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "deception": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "history": {
+          "proficiency": true,
+          "bonus": 2
+        },
+        "insight": {
+          "proficiency": true,
+          "bonus": 2
+        },
+        "intimidation": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "investigation": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "medicine": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "nature": {
+          "proficiency": true,
+          "bonus": 1
+        },
+        "perception": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "performance": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "persuasion": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "religion": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "sleightOfHand": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "stealth": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "survival": {
+          "proficiency": true,
+          "bonus": 1
+        }
+      }
+    },
+    "featuresTraitsAndOtherProficiencies": {
+      "personalityTraits": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "ideals": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "bonds": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "flaws": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "featuresAndTraits": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, consectctetur adipiscing elit. \nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "otherProficienciesAndLanguages": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, it."
+    },
+    "combat": {
+      "armorClass": 0,
+      "initiative": 0,
+      "speed": 0,
+      "maxHitPoints": 0,
+      "currentHitPoints": 0,
+      "temporaryHitPoints": 0,
+      "hitDice": "asd",
+      "hitDiceTotal": "ASD",
+      "deathSaves": {
+        "success": 0,
+        "failure": 0
+      },
+      "attacksAndSpellcasting": {
+        "weapons": [
+          {
+            "name": "Lorem",
+            "attackBonus": "Lor",
+            "damageAndType": "Lorem "
+          },
+          {
+            "name": "Lorem ",
+            "attackBonus": "Lor",
+            "damageAndType": "Lorem "
+          },
+          {
+            "name": "Lorem ",
+            "attackBonus": "Lor",
+            "damageAndType": "Lorem "
+          }
+        ],
+        "extra": "LoremLoremLoremLoremLoremLoremLorem\n\nLoremLoremLoremLoremLorem"
+      }
+    },
+    "equipmentAndMoney": {
+      "money": {
+        "copper": 12,
+        "silver": 3,
+        "electrum": 4,
+        "gold": 11,
+        "platinum": 23
+      },
+      "equipment": "LoremLoremLoremLoremLoremLorem"
+    },
+    "appearance": {
+      "age": "Lorem",
+      "height": "Lorem",
+      "weight": "Lorem",
+      "eyes": "Lorem",
+      "skin": "Lorem",
+      "hair": "Lorem",
+      "portrait": "Lorem"
+    },
+    "backstory": {
+      "backstory": "Lorem",
+      "alliesAndOrganizations": "Lorem",
+      "organizationName": "Lorem",
+      "organizationSymbol": "Lorem",
+      "additionalFeaturesAndTraits": "Lorem",
+      "treasure": "Lorem"
+    },
+    "spells": {
+      "castingClass": "Lorem",
+      "castingAbility": "Lorem",
+      "saveDice": 10,
+      "bonusAttack": 10,
+      "cantrips": ["Lorem", "", "", "", "", "", "", ""],
+      "slots": {
+        "level1": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level2": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level3": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level4": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level5": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level6": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level7": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level8": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level9": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        }
+      }
+    }
+  },
+
+  "missingFields": {
+    "correct": {
+      "general": {
+        "name": "TEST",
+        "class": "WARRIOR",
+        "level": 10,
+        "background": "DARK URGES",
+        "playerName": "TESTER",
+        "race": "ELF",
+        "alignment": "CHAOTIC EVIL",
+        "experience": 15000
+      }
+    }
+  },
+
+  "sanitize": {
+    "general": {
+      "name": "TEST",
+      "class": "WARRIOR",
+      "level": 10,
+      "background": "DARK URGES",
+      "playerName": "TESTER",
+      "race": "ELF",
+      "alignment": "CHAOTIC EVIL",
+      "experience": 15000
+    },
+    "abilityScore": {
+      "inspiration": 5,
+      "proficiencyBonus": 5,
+      "passiveWisdom": 5,
+      "stats": {
+        "strength": {
+          "value": 15,
+          "bonus": 1
+        },
+        "dexterity": {
+          "value": 15,
+          "bonus": 1
+        },
+        "constitution": {
+          "value": 15,
+          "bonus": 1
+        },
+        "intelligence": {
+          "value": 15,
+          "bonus": 1
+        },
+        "wisdom": {
+          "value": 15,
+          "bonus": 1
+        },
+        "charisma": {
+          "value": 15,
+          "bonus": 1
+        }
+      },
+      "savingThrows": {
+        "strength": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "dexterity": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "constitution": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "intelligence": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "wisdom": {
+          "proficiency": true,
+          "bonus": 3
+        },
+        "charisma": {
+          "proficiency": true,
+          "bonus": 2
+        }
+      },
+      "skills": {
+        "acrobatics": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "animalHandling": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "arcana": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "athletics": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "deception": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "history": {
+          "proficiency": true,
+          "bonus": 2
+        },
+        "insight": {
+          "proficiency": true,
+          "bonus": 2
+        },
+        "intimidation": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "investigation": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "medicine": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "nature": {
+          "proficiency": true,
+          "bonus": 1
+        },
+        "perception": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "performance": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "persuasion": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "religion": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "sleightOfHand": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "stealth": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "survival": {
+          "proficiency": true,
+          "bonus": 1
+        }
+      }
+    },
+    "featuresTraitsAndOtherProficiencies": {
+      "personalityTraits": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "ideals": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "bonds": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "flaws": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "featuresAndTraits": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, consectctetur adipiscing elit. \nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "otherProficienciesAndLanguages": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, it."
+    },
+    "combat": {
+      "armorClass": 0,
+      "initiative": 0,
+      "speed": 0,
+      "maxHitPoints": 0,
+      "currentHitPoints": 0,
+      "temporaryHitPoints": 0,
+      "hitDice": "asd",
+      "hitDiceTotal": "ASD",
+      "deathSaves": {
+        "success": 0,
+        "failure": 0
+      },
+      "attacksAndSpellcasting": {
+        "weapons": [
+          {
+            "name": "Lorem",
+            "attackBonus": "Lor",
+            "damageAndType": "Lorem "
+          },
+          {
+            "name": "Lorem ",
+            "attackBonus": "Lor",
+            "damageAndType": "Lorem "
+          },
+          {
+            "name": "Lorem ",
+            "attackBonus": "Lor",
+            "damageAndType": "Lorem "
+          }
+        ],
+        "extra": "<script>alert('A')</script>"
+      }
+    },
+    "equipmentAndMoney": {
+      "money": {
+        "copper": 12,
+        "silver": 3,
+        "electrum": 4,
+        "gold": 11,
+        "platinum": 23
+      },
+      "equipment": "$findOne({})"
+    },
+    "appearance": {
+      "age": "Lorem",
+      "height": "Lorem",
+      "weight": "Lorem",
+      "eyes": "Lorem",
+      "skin": "Lorem",
+      "hair": "Lorem",
+      "portrait": "Lorem"
+    },
+    "backstory": {
+      "backstory": "Lorem",
+      "alliesAndOrganizations": "Lorem",
+      "organizationName": "Lorem",
+      "organizationSymbol": "Lorem",
+      "additionalFeaturesAndTraits": "Lorem",
+      "treasure": "Lorem"
+    },
+    "spells": {
+      "castingClass": "Lorem",
+      "castingAbility": "Lorem",
+      "saveDice": 10,
+      "bonusAttack": 10,
+      "cantrips": ["Lorem", "", "", "", "", "", "", ""],
+      "slots": {
+        "level1": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level2": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level3": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level4": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level5": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level6": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level7": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level8": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level9": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "updated": {
+    "general": {
+      "name": "Test Update",
+      "class": "Mage",
+      "level": 12,
+      "background": "DARK URGES",
+      "playerName": "TESTER",
+      "race": "ELF",
+      "alignment": "CHAOTIC EVIL",
+      "experience": 15000
+    },
+    "abilityScore": {
+      "inspiration": 5,
+      "proficiencyBonus": 5,
+      "passiveWisdom": 5,
+      "stats": {
+        "strength": {
+          "value": 15,
+          "bonus": 1
+        },
+        "dexterity": {
+          "value": 15,
+          "bonus": 1
+        },
+        "constitution": {
+          "value": 15,
+          "bonus": 1
+        },
+        "intelligence": {
+          "value": 15,
+          "bonus": 1
+        },
+        "wisdom": {
+          "value": 15,
+          "bonus": 1
+        },
+        "charisma": {
+          "value": 15,
+          "bonus": 1
+        }
+      },
+      "savingThrows": {
+        "strength": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "dexterity": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "constitution": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "intelligence": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "wisdom": {
+          "proficiency": true,
+          "bonus": 3
+        },
+        "charisma": {
+          "proficiency": true,
+          "bonus": 2
+        }
+      },
+      "skills": {
+        "acrobatics": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "animalHandling": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "arcana": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "athletics": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "deception": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "history": {
+          "proficiency": true,
+          "bonus": 2
+        },
+        "insight": {
+          "proficiency": true,
+          "bonus": 2
+        },
+        "intimidation": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "investigation": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "medicine": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "nature": {
+          "proficiency": true,
+          "bonus": 1
+        },
+        "perception": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "performance": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "persuasion": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "religion": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "sleightOfHand": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "stealth": {
+          "proficiency": false,
+          "bonus": 0
+        },
+        "survival": {
+          "proficiency": true,
+          "bonus": 1
+        }
+      }
+    },
+    "featuresTraitsAndOtherProficiencies": {
+      "personalityTraits": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "ideals": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "bonds": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "flaws": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "featuresAndTraits": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, consectctetur adipiscing elit. \nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "otherProficienciesAndLanguages": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nLorem ipsum dolor sit amet, it."
+    },
+    "combat": {
+      "armorClass": 0,
+      "initiative": 0,
+      "speed": 0,
+      "maxHitPoints": 0,
+      "currentHitPoints": 0,
+      "temporaryHitPoints": 0,
+      "hitDice": "asd",
+      "hitDiceTotal": "ASD",
+      "deathSaves": {
+        "success": 0,
+        "failure": 0
+      },
+      "attacksAndSpellcasting": {
+        "weapons": [
+          {
+            "name": "Lorem",
+            "attackBonus": "Lor",
+            "damageAndType": "Lorem "
+          },
+          {
+            "name": "Lorem ",
+            "attackBonus": "Lor",
+            "damageAndType": "Lorem "
+          },
+          {
+            "name": "Lorem ",
+            "attackBonus": "Lor",
+            "damageAndType": "Lorem "
+          }
+        ],
+        "extra": "LoremLoremLoremLoremLoremLoremLorem\n\nLoremLoremLoremLoremLorem"
+      }
+    },
+    "equipmentAndMoney": {
+      "money": {
+        "copper": 12,
+        "silver": 3,
+        "electrum": 4,
+        "gold": 11,
+        "platinum": 23
+      },
+      "equipment": "LoremLoremLoremLoremLoremLorem"
+    },
+    "appearance": {
+      "age": "Lorem",
+      "height": "Lorem",
+      "weight": "Lorem",
+      "eyes": "Lorem",
+      "skin": "Lorem",
+      "hair": "Lorem",
+      "portrait": "Lorem"
+    },
+    "backstory": {
+      "backstory": "Lorem",
+      "alliesAndOrganizations": "Lorem",
+      "organizationName": "Lorem",
+      "organizationSymbol": "Lorem",
+      "additionalFeaturesAndTraits": "Lorem",
+      "treasure": "Lorem"
+    },
+    "spells": {
+      "castingClass": "Lorem",
+      "castingAbility": "Lorem",
+      "saveDice": 10,
+      "bonusAttack": 10,
+      "cantrips": ["Lorem", "", "", "", "", "", "", ""],
+      "slots": {
+        "level1": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level2": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level3": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level4": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level5": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level6": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level7": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level8": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        },
+        "level9": {
+          "total": 0,
+          "expended": 0,
+          "known": [
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            },
+            {
+              "name": "Lorem",
+              "prepared": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

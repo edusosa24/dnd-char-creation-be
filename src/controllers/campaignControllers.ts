@@ -86,7 +86,8 @@ const deleteCampaign = async (
   next: NextFunction
 ) => {
   try {
-    await campaignDao.deleteCampaign(req.params.campaignId);
+    const { userId, campaignId } = req.params;
+    await campaignDao.deleteCampaign(userId, campaignId);
     return res.status(204).end();
   } catch (err) {
     errorLog(err);

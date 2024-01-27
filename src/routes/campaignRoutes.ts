@@ -11,11 +11,14 @@ campaignRoutes.get(
   credentialsValidator.validateAdmin,
   campaignControllers.getAllCampaigns
 );
-campaignRoutes.get('/:campaignId', campaignControllers.getCampaign);
+campaignRoutes.get(
+  '/:campaignId',
+  campaignValidator.validateCampaignExistance,
+  campaignControllers.getCampaign
+);
 campaignRoutes.get(
   '/user/:userId',
   validateUserExistance,
-  campaignValidator.validateCampaignExistance,
   campaignControllers.getFromUser
 );
 campaignRoutes.post(
