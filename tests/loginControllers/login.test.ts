@@ -31,6 +31,11 @@ describe('Login tests', () => {
 
     expect(response.statusCode).toBe(200);
     expect(response.body.token).not.toBeNull();
-  }); /*,
-    test('Login fails because user is invalid', async () => {});*/
+  });
+  test('Login fails because user data is missing on headers', async () => {
+    const response = await api.post('/api/login').send();
+
+    expect(response.statusCode).toBe(401);
+    expect(response.body.error).toContain('missing credentials');
+  });
 });
