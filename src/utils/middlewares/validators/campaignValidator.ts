@@ -5,7 +5,7 @@ import { Campaign } from '../../../models/campaign';
 import { Error as iError } from '../../interfaces/iError';
 
 const checkCharacter = async (character: string) => {
-  const char = Character.findById(character);
+  const char = await Character.findOne({ _id: character });
   if (!char) {
     throw new Error(`character id: ${character} does not exists`);
   }
@@ -14,7 +14,7 @@ const checkCharacter = async (character: string) => {
 };
 
 const checkExistance = async (campaignId: string) => {
-  const campaign = await Campaign.findById(campaignId);
+  const campaign = await Campaign.findOne({ _id: campaignId });
   if (!campaign) {
     throw new Error('campaign not found');
   }
@@ -30,12 +30,6 @@ export const validateCampaignExistance = async (
   await checkSchema(
     {
       campaignId: {
-        notEmpty: {
-          errorMessage: 'missing campaign id',
-          bail: {
-            level: 'request'
-          }
-        },
         custom: {
           options: checkExistance,
           bail: true

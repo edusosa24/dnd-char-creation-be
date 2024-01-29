@@ -19,7 +19,6 @@ characterRoutes.get(
 characterRoutes.get(
   '/user/:userId',
   validateUserExistance,
-  credentialsValidator.validateCredentials,
   characterControllers.getFromUser
 );
 characterRoutes.post(
