@@ -35,7 +35,7 @@ describe('Login tests', () => {
   test('Login fails because user data is missing on headers', async () => {
     const response = await api.post('/api/login').send();
 
-    expect(response.statusCode).toBe(401);
+    expect(response.statusCode).toBe(400);
     expect(response.body.error).toContain('missing credentials');
   });
 });

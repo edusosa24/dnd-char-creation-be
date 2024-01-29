@@ -119,7 +119,7 @@ export const validateUserLogin = async (
     const msg: string[] = errors.array().map((er) => `${er.msg}`);
     const error: iError = {
       error: msg,
-      status: 401
+      status: 400
     };
     next(error);
   }
