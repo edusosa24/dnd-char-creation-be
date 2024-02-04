@@ -26,11 +26,20 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
       id: user!._id
     };
 
+    const expires = Date.now() + 60 * 60 * 24;
     const token = jwt.sign(userForToken, environment.SECRET, {
       expiresIn: 60 * 60 * 24
     });
 
-    return res.status(200).send({ token, username: user!.username }).end();
+    return res
+      .status(200)
+      .send({
+        token,
+        username: user!.username,
+        userId: user!._id,
+        expiresAt: expires
+      })
+      .end();
   } catch (e) {
     errorLog(e);
     next(e);
