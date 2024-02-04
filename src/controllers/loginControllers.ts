@@ -18,7 +18,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
         : await bcrypt.checkPassword(password, user.password!);
 
     if (!(user && passwordCorrect)) {
-      next(new Error('Invalid username or password'));
+      throw new Error('Invalid username or password');
     }
 
     const userForToken = {
