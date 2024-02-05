@@ -12,17 +12,24 @@ export const getAllCampaigns = async () => {
 };
 
 export const getCampaignsFromUser = async (userId: string) => {
-  const data = await Campaign.find({ master: userId }).catch((err) => {
-    throw err;
-  });
+  const data = await Campaign.find({ master: userId }, 'id name').catch(
+    (err) => {
+      throw err;
+    }
+  );
 
   return data;
 };
 
 export const getCampaign = async (campaignId: string) => {
-  const data = await Campaign.findOne({ _id: campaignId }).catch((err) => {
-    throw err;
-  });
+  const data = await Campaign.findOne({ _id: campaignId })
+    .populate(
+      'characters',
+      'id general.name general.class general.level general.race'
+    )
+    .catch((err) => {
+      throw err;
+    });
 
   if (!data) {
     throw new Error('campaign not found');

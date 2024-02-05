@@ -22,6 +22,15 @@ const checkExistance = async (userId: string) => {
   return true;
 };
 
+const checkExistanceByUsername = async (username: string) => {
+  const user = await User.findOne({ username });
+  if (!user) {
+    throw new Error('user not found');
+  }
+
+  return true;
+};
+
 export const validateUserExistance = async (
   req: Request,
   res: Response,
@@ -38,6 +47,42 @@ export const validateUserExistance = async (
         },
         custom: {
           options: checkExistance,
+          bail: true
+        }
+      }
+    },
+    ['params']
+  ).run(req);
+
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const msg: string[] = errors.array().map((er) => `${er.msg}`);
+    const error: iError = {
+      error: msg,
+      status: 404
+    };
+    next(error);
+  }
+  next();
+};
+
+export const validateUserExistanceByUsername = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  await checkSchema(
+    {
+      username: {
+        notEmpty: {
+          errorMessage: 'missing username',
+          bail: {
+            level: 'request'
+          }
+        },
+        custom: {
+          options: checkExistanceByUsername,
           bail: true
         }
       }
@@ -189,5 +234,6 @@ export const validateUserCreate = async (
 export default {
   validateUserCreate,
   validateUserLogin,
-  validateUserExistance
+  validateUserExistance,
+  validateUserExistanceByUsername
 };

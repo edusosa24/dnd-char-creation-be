@@ -1,7 +1,6 @@
 import { Character } from '../models/character';
 import { Character as iCharacter } from '../utils/interfaces/iCharacter';
 import { User } from '../models/user';
-import mongoose from 'mongoose';
 import { Campaign } from '../models/campaign';
 
 export const getAllCharacters = async () => {
@@ -13,7 +12,10 @@ export const getAllCharacters = async () => {
 };
 
 export const getCharactersFromUser = async (userId: string) => {
-  const data = await Character.find({ user: userId }).catch((err) => {
+  const data = await Character.find(
+    { user: userId },
+    'id general.name general.class general.level general.race'
+  ).catch((err) => {
     throw err;
   });
 

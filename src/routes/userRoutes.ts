@@ -16,6 +16,12 @@ userRoutes.get(
   credentialsValidator.validateCredentials,
   userControllers.getUser
 );
+userRoutes.get(
+  '/:username',
+  userValidator.validateUserExistanceByUsername,
+  credentialsValidator.validateCredentials,
+  userControllers.getUserByUsername
+);
 userRoutes.post(
   '/',
   userValidator.validateUserCreate,

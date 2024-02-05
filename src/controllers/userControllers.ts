@@ -24,6 +24,20 @@ const getUser = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
+const getUserByUsername = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const response = await userDao.getUsersByUsername(req.params.username);
+    return res.status(200).send(response);
+  } catch (err) {
+    errorLog(err);
+    next(err);
+  }
+};
+
 const postUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const user: iUser = {
@@ -50,4 +64,10 @@ const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
-export default { getAllUsers, getUser, postUser, deleteUser };
+export default {
+  getAllUsers,
+  getUser,
+  postUser,
+  deleteUser,
+  getUserByUsername
+};
