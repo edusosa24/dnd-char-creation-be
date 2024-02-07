@@ -12,11 +12,12 @@ export const getAllCampaigns = async () => {
 };
 
 export const getCampaignsFromUser = async (userId: string) => {
-  const data = await Campaign.find({ master: userId }, 'id name').catch(
-    (err) => {
-      throw err;
-    }
-  );
+  const data = await Campaign.find(
+    { master: userId },
+    'id name characters'
+  ).catch((err) => {
+    throw err;
+  });
 
   return data;
 };
