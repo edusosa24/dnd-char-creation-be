@@ -83,8 +83,8 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 30 },
-            errorMessage: 'general.name max length is 30 characters',
+            options: { max: 50 },
+            errorMessage: 'general.name max length is 50 characters',
             bail: true
           }
         },
@@ -109,8 +109,8 @@ export const validateCharacter = async (
             bail: true
           },
           isInt: {
-            options: { min: 0, max: 99 },
-            errorMessage: 'general.level must be between 0 and 99',
+            options: { min: 0, max: 999 },
+            errorMessage: 'general.level must be between 0 and 999',
             bail: true
           }
         },
@@ -369,9 +369,9 @@ export const validateCharacter = async (
             bail: true
           },
           isInt: {
-            options: { min: 0, max: 999 },
+            options: { min: -99, max: 99 },
             errorMessage:
-              'abilityScore.stats.[STAT].value must be between 0 and 999',
+              'abilityScore.stats.[STAT].value must be between -99 and 99',
             bail: true
           }
         },
@@ -381,9 +381,9 @@ export const validateCharacter = async (
             bail: true
           },
           isInt: {
-            options: { min: 0, max: 99 },
+            options: { min: -99, max: 99 },
             errorMessage:
-              'abilityScore.passiveWisdom.[STAT].bonus must be between 0 and 99',
+              'abilityScore.passiveWisdom.[STAT].bonus must be between -99 and 99',
             bail: true
           }
         },
@@ -750,9 +750,9 @@ export const validateCharacter = async (
             bail: true
           },
           isInt: {
-            options: { min: 0, max: 99 },
+            options: { min: -99, max: 99 },
             errorMessage:
-              'abilityScore.savingThrows.strength.bonus must be between 0 and 99',
+              'abilityScore.savingThrows.strength.bonus must be between -99 and 99',
             bail: true
           }
         },
@@ -1806,9 +1806,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 275 },
+            options: { max: 1000 },
             errorMessage:
-              'equipmentAndMoney.equipment max length is 275 characters',
+              'equipmentAndMoney.equipment max length is 1000 characters',
             bail: true
           }
         },

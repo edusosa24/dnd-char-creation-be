@@ -4,6 +4,7 @@ import { User } from '../../src/models/user';
 import supertest from 'supertest';
 import app from '../../src/server/app';
 import * as sampleUsers from '../sampleData/sampleUsers.json';
+import { encryptPassword } from '../../src/utils/bcrypt';
 
 const api = supertest(app);
 
@@ -11,6 +12,7 @@ beforeAll(async () => {
   const user = new User({
     ...sampleUsers.users[0]
   });
+  user.password = await encryptPassword(user.password!);
   await user.save();
 });
 

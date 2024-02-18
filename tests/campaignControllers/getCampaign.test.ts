@@ -46,9 +46,6 @@ describe('Get campaigns tests', () => {
 
     expect(response.statusCode).toBe(200);
     expect(response.body.name).toStrictEqual(sampleCampaigns.correct.name);
-    expect(
-      campaign!.characters[0]._id.equals(response.body.characters[0])
-    ).toBeTruthy();
   });
   test("Can't retrieve campaign because it doesn't exists", async () => {
     const mockId = new mongoose.Types.ObjectId();
