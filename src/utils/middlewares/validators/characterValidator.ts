@@ -1645,9 +1645,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 250 },
+            options: { max: 600 },
             errorMessage:
-              'combat.attacksAndSpellcasting.extra max length is 250 characters',
+              'combat.attacksAndSpellcasting.extra max length is 600 characters',
             bail: true
           }
         },
@@ -1663,9 +1663,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 10 },
+            options: { max: 22 },
             errorMessage:
-              'combat.attacksAndSpellcasting.Weapons.[WEAPON].name max length is 10 characters',
+              'combat.attacksAndSpellcasting.Weapons.[WEAPON].name max length is 22 characters',
             bail: true
           }
         },
@@ -1681,9 +1681,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 3 },
+            options: { max: 11 },
             errorMessage:
-              'combat.attacksAndSpellcasting.Weapons.[WEAPON].attackBonus max length is 3 characters',
+              'combat.attacksAndSpellcasting.Weapons.[WEAPON].attackBonus max length is 11 characters',
             bail: true
           }
         },
@@ -1699,9 +1699,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 14 },
+            options: { max: 22 },
             errorMessage:
-              'combat.attacksAndSpellcasting.Weapons.[WEAPON].damageAndType max length is 14 characters',
+              'combat.attacksAndSpellcasting.Weapons.[WEAPON].damageAndType max length is 22 characters',
             bail: true
           }
         },
