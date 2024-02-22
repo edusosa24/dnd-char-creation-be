@@ -1362,9 +1362,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 90 },
+            options: { max: 200 },
             errorMessage:
-              'featuresTraitsAndOtherProficiencies.personalityTraits max length is 90 characters',
+              'featuresTraitsAndOtherProficiencies.personalityTraits max length is 200 characters',
             bail: true
           }
         },
@@ -1380,9 +1380,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 60 },
+            options: { max: 200 },
             errorMessage:
-              'featuresTraitsAndOtherProficiencies.ideals max length is 60 characters',
+              'featuresTraitsAndOtherProficiencies.ideals max length is 200 characters',
             bail: true
           }
         },
@@ -1398,9 +1398,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 60 },
+            options: { max: 200 },
             errorMessage:
-              'featuresTraitsAndOtherProficiencies.bonds max length is 60 characters',
+              'featuresTraitsAndOtherProficiencies.bonds max length is 200 characters',
             bail: true
           }
         },
@@ -1416,9 +1416,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 60 },
+            options: { max: 200 },
             errorMessage:
-              'featuresTraitsAndOtherProficiencies.flaws max length is 60 characters',
+              'featuresTraitsAndOtherProficiencies.flaws max length is 200 characters',
             bail: true
           }
         },
@@ -1434,9 +1434,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 800 },
+            options: { max: 1200 },
             errorMessage:
-              'featuresTraitsAndOtherProficiencies.featuresAndTraits max length is 800 characters',
+              'featuresTraitsAndOtherProficiencies.featuresAndTraits max length is 1200 characters',
             bail: true
           }
         },
@@ -1452,9 +1452,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 250 },
+            options: { max: 1200 },
             errorMessage:
-              'featuresTraitsAndOtherProficiencies.otherProficienciesAndLanguages max length is 250 characters',
+              'featuresTraitsAndOtherProficiencies.otherProficienciesAndLanguages max length is 1200 characters',
             bail: true
           }
         },
@@ -1956,8 +1956,8 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 800 },
-            errorMessage: 'backstory.backstory max length is 800 characters',
+            options: { max: 1200 },
+            errorMessage: 'backstory.backstory max length is 1200 characters',
             bail: true
           }
         },
@@ -1971,9 +1971,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 500 },
+            options: { max: 1200 },
             errorMessage:
-              'abackstory.alliesAndOrganizations max length is 500 characters',
+              'abackstory.alliesAndOrganizations max length is 1200 characters',
             bail: true
           }
         },
@@ -2014,9 +2014,9 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 900 },
+            options: { max: 1200 },
             errorMessage:
-              'backstory.additionalFeaturesAndTraits max length is 900 characters',
+              'backstory.additionalFeaturesAndTraits max length is 1200 characters',
             bail: true
           }
         },
@@ -2030,8 +2030,8 @@ export const validateCharacter = async (
             bail: true
           },
           isLength: {
-            options: { max: 650 },
-            errorMessage: 'backstory.treasure max length is 650 characters',
+            options: { max: 1200 },
+            errorMessage: 'backstory.treasure max length is 1200 characters',
             bail: true
           }
         },
