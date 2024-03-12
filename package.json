@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --extensions \".ts,.js\" --out-dir build --copy-files",
-    "start": "cross-env NODE_ENV=prod node index.js",
+    "build": "npm install && babel src --extensions \".ts,.js\" --out-dir build --copy-files",
+    "start": "cross-env NODE_ENV=prod node build/index.js",
     "dev": "cross-env NODE_ENV=dev ts-node-dev --respawn src/index.ts",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "test-coverage": "cross-env NODE_ENV=test jest --verbose --runInBand --coverage"
