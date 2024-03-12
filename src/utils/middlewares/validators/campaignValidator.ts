@@ -13,6 +13,17 @@ const checkCharacter = async (character: string) => {
   return true;
 };
 
+const checkDuplicates = async (characters: string[]) => {
+  const duplicates = characters.filter(
+    (item, index) => characters.indexOf(item) !== index
+  );
+  if (duplicates.length > 0) {
+    throw new Error('duplicated characters are invalid');
+  }
+
+  return true;
+};
+
 const checkExistance = async (campaignId: string) => {
   const campaign = await Campaign.findOne({ _id: campaignId });
   if (!campaign) {
@@ -108,11 +119,15 @@ export const validateCampaignUpdate = async (
         },
         characters: {
           exists: {
-            errorMessage: 'name is required',
+            errorMessage: 'characters are required',
             bail: true
           },
           isArray: {
             errorMessage: 'characters must be an array',
+            bail: true
+          },
+          custom: {
+            options: checkDuplicates,
             bail: true
           }
         },

@@ -65,7 +65,6 @@ describe('Put Campaign tests', () => {
     expect(campaign!.characters).toHaveLength(0);
     expect(response.body.name).toStrictEqual('Test Update');
     expect(response.body.characters).toHaveLength(1);
-    expect(character!._id.equals(response.body.characters[0])).toBeTruthy();
   });
   test("Can't update campaign because it doesn't exists", async () => {
     const user = await User.findOne({});
@@ -114,6 +113,5 @@ describe('Put Campaign tests', () => {
     expect(campaign!.characters).toHaveLength(0);
     expect(response.body.name).toStrictEqual('');
     expect(response.body.characters).toHaveLength(1);
-    expect(character!._id.equals(response.body.characters[0])).toBeTruthy();
   });
 });

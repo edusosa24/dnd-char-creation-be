@@ -26,7 +26,7 @@ export const getCampaign = async (campaignId: string) => {
   const data = await Campaign.findOne({ _id: campaignId })
     .populate(
       'characters',
-      'id general.name general.class general.level general.race'
+      'id general.player general.name general.class general.level general.race'
     )
     .catch((err) => {
       throw err;
@@ -79,9 +79,14 @@ export const updateCampaign = async (
     { _id: campaignId },
     { name: campaign.name, characters },
     { new: true }
-  ).catch((err) => {
-    throw err;
-  });
+  )
+    .populate(
+      'characters',
+      'id general.player general.name general.class general.level general.race'
+    )
+    .catch((err) => {
+      throw err;
+    });
 
   if (!data) {
     throw new Error('campaign could not be updated');
