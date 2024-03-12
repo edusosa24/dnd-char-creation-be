@@ -8,9 +8,7 @@
     "start": "cross-env NODE_ENV=prod node build/index.js",
     "dev": "cross-env NODE_ENV=dev ts-node-dev --respawn src/index.ts",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
-    "test-coverage": "cross-env NODE_ENV=test jest --verbose --runInBand --coverage",
-    "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
+    "test-coverage": "cross-env NODE_ENV=test jest --verbose --runInBand --coverage"
   },
   "author": "",
   "license": "ISC",
